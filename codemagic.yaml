@@ -28,7 +28,7 @@ workflows:
       - name: Export IPA
         script: |
           cd $HOME/output
-          xcodebuild -exportArchive -archivePath App.xcarchive -exportOptionsPlist ios/App/App/Info.plist -exportPath .
+          xcodebuild -exportArchive -archivePath $HOME/output/App.xcarchive -exportOptionsPlist ios/App/App/Info.plist -exportPath .
           mv *.ipa App.ipa
     artifacts:
       - $HOME/output/App.ipa

@@ -31,4 +31,4 @@ workflows:
           zip -r App.ipa App.xcarchive/Products/Applications/App.app
           mv App.ipa App.ipa
     artifacts:
-      - $HOME/output/*.ipa
+      - $HOME/output/App.ipa

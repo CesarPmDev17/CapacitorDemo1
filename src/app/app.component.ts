@@ -9,7 +9,7 @@ import { Geolocation, PermissionStatus, GeolocationPluginPermissions} from '@cap
 export class AppComponent implements OnInit {
   
   title = 'capacitor-demo';
-  public latitude: number = 0;
+  public longitude: number = 0;
   public permissionStatus: PermissionStatus = { location: 'prompt', coarseLocation: 'prompt' };
 
   constructor() { }
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
       if (this.permissionStatus.location === 'granted') {
         const coordinates = await Geolocation.getCurrentPosition();
         console.log('Current position:', coordinates.coords.latitude);
-        this.latitude = coordinates.coords.latitude;
+        this.longitude = coordinates.coords.latitude;
       } else {
         console.warn('No se tienen los permisos necesarios para acceder a la ubicación.');
       }
